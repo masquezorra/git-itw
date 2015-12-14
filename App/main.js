@@ -1,14 +1,16 @@
 ﻿getAuthors = [];
-$.when(getJson("http://192.168.160.36/JSON/getAuthors.aspx", {})).done(function (a1) {
+$.when(getJson("http://192.168.160.36/JSON/getAuthors.aspx?numAuthors=23", {})).done(function (a1) {
     var arr = a1;
     getAuthors = arr;
 });
 
 getTitles = [];
 $.when(getJson("http://192.168.160.36/JSON/getTitles.aspx", {})).done(function (a1) {
-    var arr = a1;
-    getTitles = arr;
+    //var arr = a1;
+    getTitles = a1;
 });
+
+
 
 function getJson(myurl, mydata) {
     return $.ajax({
